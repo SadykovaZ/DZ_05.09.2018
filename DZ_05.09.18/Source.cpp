@@ -35,34 +35,62 @@ start:
 		{
 			for (int j = 0; j < m; j++)
 			{
-				p[i][j] = 0 + rand() % 20;
+				p[i][j] = 0 + rand() % 10;
 				cout << setw(3) << p[i][j];
 			}
 			cout << endl;
 		}
 
+		int n1 = n;
+		for (int pass = 0; pass < n - 1; pass++)
+		{
+
+
+			for (int i = 0; i < n - 1; i++)
+			{
+
+				for (int j = 0; j < m; j++)
+				{
+
+
+					if (p[i][j] == 0)
+					{
+						
+						swap(p[i], p[i + 1]);
+						//cout << n1 << " ";
+						break;
+						
+					}
+
+				}
+			}
+		}
+		cout << endl;
 
 		for (int i = 0; i < n; i++)
 		{
 
 			for (int j = 0; j < m; j++)
 			{
+
+
 				if (p[i][j] == 0)
 				{
-					k = i;
-					delete[] p[k];
-					for (int i = k; i < n; i++)
-					{
-						p[i] = p[i + 1];
+					k++;
+					n1--;
+					break;
 
-					}
-					n--;
 				}
-
 			}
 		}
-		cout << endl;
-		for (int i = 0; i < n; i++)
+		cout << n1 << " " << k << endl;
+
+		for (int i = n-1; i >= n-k; i--)
+		{
+			delete[] p[i];
+		}
+
+		for (int i = 0; i < n1; i++)
 		{
 			for (int j = 0; j < m; j++)
 			{
@@ -71,6 +99,17 @@ start:
 			cout << endl;
 		}
 		cout << endl;
+
+
+		/*for (int i = k; i < n1; i++)
+		{
+			for (int j = 0; j < m; j++)
+			{
+				cout << setw(3) << p[i][j];
+			}
+			cout << endl;
+		}
+		cout << endl;*/
 
 	}
 
@@ -181,7 +220,7 @@ start:
 				{
 					if (*p[j] == number)
 					{
-						cout << '+'<< endl;
+						cout << '+' << endl;
 					}
 				}
 		}
