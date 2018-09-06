@@ -1,6 +1,9 @@
+#include<cstdlib>
+#include<cstdio>
 #include<iostream>
 #include<iomanip>
-#include<time.h>
+#include<ctime>
+
 using namespace std;
 
 
@@ -8,9 +11,7 @@ using namespace std;
 
 int main()
 {
-	setlocale(LC_ALL, "Rus");
-	srand(time(NULL));
-
+	
 	int n = 0;
 start:
 	cout << "Введите номер задания: ";
@@ -56,8 +57,7 @@ start:
 					if (p[i][j] == 0)
 					{
 						
-						swap(p[i], p[i + 1]);
-						//cout << n1 << " ";
+						swap(p[i], p[i + 1]);						
 						break;
 						
 					}
@@ -99,18 +99,6 @@ start:
 			cout << endl;
 		}
 		cout << endl;
-
-
-		/*for (int i = k; i < n1; i++)
-		{
-			for (int j = 0; j < m; j++)
-			{
-				cout << setw(3) << p[i][j];
-			}
-			cout << endl;
-		}
-		cout << endl;*/
-
 	}
 
 	else if (n == 2)
